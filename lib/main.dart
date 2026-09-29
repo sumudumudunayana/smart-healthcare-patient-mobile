@@ -16,15 +16,11 @@ class SmartHealthcarePatientApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Smart Healthcare Patient',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color(0xFF059669),
-        ),
+        colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF059669)),
         useMaterial3: true,
         fontFamily: 'Inter',
       ),
-      navigatorObservers: [
-        appRouteObserver,
-      ],
+      navigatorObservers: [appRouteObserver],
       home: const LoginScreen(),
     );
   }
