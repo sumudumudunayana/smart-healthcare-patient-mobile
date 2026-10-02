@@ -63,17 +63,21 @@ class _AIAssistantScreenState extends State<AIAssistantScreen> {
   }
 
   void _showMessage(String message) {
-    if (!mounted) {
-      return;
-    }
+  if (!mounted) {
+    return;
+  }
 
-    ScaffoldMessenger.of(context).showSnackBar(
+  final messenger = ScaffoldMessenger.of(context);
+
+  messenger
+    ..hideCurrentSnackBar()
+    ..showSnackBar(
       SnackBar(
         content: Text(message),
-        behavior: SnackBarBehavior.floating,
+        behavior: SnackBarBehavior.fixed,
       ),
     );
-  }
+}
 
   Future<void> _processAppointmentRequest() async {
     final request = _appointmentController.text.trim();
